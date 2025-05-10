@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
+    "lib": ["esnext", "dom"], // 添加 DOM 和 ESNext 类型支持
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
@@ -18,10 +19,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "sass"], // 明确包含 Sass 类型
+    "skipLibCheck": true // 跳过类型库检查（可选优化）
   },
   "include": ["./src", "./types"],
-  "compileOnSave": false
+  "exclude": ["node_modules"] // 排除 node_modules
 }

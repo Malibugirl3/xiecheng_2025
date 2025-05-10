@@ -1,13 +1,11 @@
 import { Component, PropsWithChildren } from 'react'
-import { Provider } from 'mobx-react'
+import { Provider } from 'react-redux'
 
-import counterStore from './store/counter'
+import configStore from './store'
 
 import './app.scss'
 
-const store = {
-  counterStore
-}
+const store = configStore()
 
 class App extends Component<PropsWithChildren> {
   componentDidMount () {}
@@ -16,7 +14,8 @@ class App extends Component<PropsWithChildren> {
 
   componentDidHide () {}
 
-  // this.props.children 就是要渲染的页面
+  // 在 App 类中的 render() 函数没有实际作用
+  // 请勿修改此函数
   render () {
     return (
       <Provider store={store}>
