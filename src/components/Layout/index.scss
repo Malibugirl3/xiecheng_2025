@@ -1,0 +1,22 @@
+$layout-prefix: 'td-layout';
+
+.#{$layout-prefix} {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: 1;
+    margin-top: 64px; // Navbar height
+    padding: 24px;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      padding: 16px;
+      margin-top: 56px; // Smaller Navbar height on mobile
+    }
+  }
+}
